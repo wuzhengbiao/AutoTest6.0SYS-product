@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="BasicMethods.AssertionListener" />
+        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+    </listeners>
+
+    <test name="会计学习">
+        <!--以下是为@test方法中进行赋值20180612YFF-->
+        <parameter name="TestFilePath" value="/TestList/hnzk.xlsx"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="hnzk.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+
+</suite>

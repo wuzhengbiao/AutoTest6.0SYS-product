@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="BasicMethods.AssertionListener" />
+        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+    </listeners>
+    <test name="福建省会计学分订单">
+        <parameter name="TestFilePath" value="/TestList/7.0FJSKJorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0FJSKJorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建省会计发票查询">
+        <parameter name="TestFilePath" value="/TestList/7.0FJSKJKJbillquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0FJSKJKJbillquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建省会计异常选课">
+        <parameter name="TestFilePath" value="/TestList/7.0FJSKJAbnormalCourseQuery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0FJSKJAbnormalCourseQuery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="7.0青海会计订单查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0QHKJorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0QHKJorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="7.0青海会计发票查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0QHKJbillquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0QHKJbillquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="7.0青海会计选课异常查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0QHKJAbnormalCourseQuery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0QHKJAbnormalCourseQuery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+   <test name="6.0四川建设个人和批次订单查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/6.0SCorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="6.0SCorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="6.0四川建设个人和批次发票查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/6.0SCbillquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="6.0SCbillquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+  <test name="7.0福建建设订单查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0FJJSorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0FJJSorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+
+    <!--<test name="7.0教育学院订单查询">
+           以下是为@test方法中进行赋值
+        <parameter name="TestFilePath" value="/TestList/7.0JYXYorderquery.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0JYXYorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>-->
+ <test name="7.0甘肃专技个人和批次订单查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0GSZJorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0GSZJorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="7.0甘肃专技个人发票查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0GSZJbillquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0GSZJbillquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+ <test name="7.0周口个人和批次订单查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0ZKorderquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0ZKorderquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="7.0周口个人和批次发票查询">
+        <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/7.0ZKbillquery.xlsx"/>
+        <parameter name="TIME" value="8"/>
+        <parameter name="TestName" value="7.0ZKbillquery.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+
+ </suite>

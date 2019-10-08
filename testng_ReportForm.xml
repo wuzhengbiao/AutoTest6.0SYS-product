@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test" >
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="BasicMethods.AssertionListener" />
+        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+    </listeners>
+	    <!--<test name="湖北会计销售统计">
+        <parameter name="TestFilePath" value="/TestList/7.0HBKJ-CreditSaleStatistic .xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0HBKJ-CreditSaleStatistic .xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="湖北会计学习统计">
+        <parameter name="TestFilePath" value="/TestList/7.0HBKJ-ChooseCourseStatistic .xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0HBKJ-ChooseCourseStatistic .xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="安徽会计销售统计">
+        <parameter name="TestFilePath" value="/TestList/7.0AHKJ-CreditSaleStatistic.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0AHKJ-CreditSaleStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="安徽会计学时使用统计">
+        <parameter name="TestFilePath" value="/TestList/7.0AHJKJ-ChooseCourseStatistic.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0AHJKJ-ChooseCourseStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="永济会计销售统计">
+        <parameter name="TestFilePath" value="/TestList/7.0SXYJKJ-CreditSaleStatistic.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0SXYJKJ-CreditSaleStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="永济会计选课统计">
+        <parameter name="TestFilePath" value="/TestList/7.0SXYJKJ-ChooseCourseStatistic.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0SXYJKJ-ChooseCourseStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>-->
+
+    <test name="四川开通统计">
+       <parameter name="TestFilePath" value="/TestList/6.0SCJS-ClassOpenStatistics.xlsx"/>
+       <parameter name="TIME" value="4"/>
+       <parameter name="TestName" value="6.0SCJS-ClassOpenStatistics.xlsx"/>
+       <classes>
+           <class name="Testing.Tester"/>
+       </classes>
+   </test>
+   <test name="四川学习统计">
+       <parameter name="TestFilePath" value="/TestList/6.0SCJS-LearningStatistics.xlsx"/>
+       <parameter name="TIME" value="4"/>
+       <parameter name="TestName" value="6.0SCJS-LearningStatistics.xlsx"/>
+       <classes>
+           <class name="Testing.Tester"/>
+       </classes>
+   </test>
+
+    <test name="周口开通统计">
+        <parameter name="TestFilePath" value="/TestList/7.0HNZK-ClassOpenStatistics.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0HNZK-ClassOpenStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="周口学习统计">
+        <parameter name="TestFilePath" value="/TestList/7.0HNZK-LearningStatistics.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0HNZK-LearningStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="甘肃专技培训班开通统计">
+        <parameter name="TestFilePath" value="/TestList/7.0GSZJ-ClassOpenStatistics.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0GSZJ-ClassOpenStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="甘肃专技班级学习统计">
+        <parameter name="TestFilePath" value="/TestList/7.0GSZJ-LearningStatistics.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0GSZJ-LearningStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+
+    <test name="福建建设开通统计">
+        <parameter name="TestFilePath" value="/TestList/7.0FJJS-ClassOpenStatistics.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0FJJS-ClassOpenStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建建设学习统计">
+        <parameter name="TestFilePath" value="/TestList/7.0FJJS-LearningStatistics.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0FJJS-LearningStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="教育学院班级开通统计">
+    <parameter name="TestFilePath" value="/TestList/7.0JYXY-ClassOpenStatistics.xlsx"/>
+    <parameter name="TIME" value="20"/>
+    <parameter name="TestName" value="7.0JYXY-ClassOpenStatistics.xlsx"/>
+    <classes>
+        <class name="Testing.Tester"/>
+    </classes>
+    </test>
+    <test name="教育学院班级学习统计">
+        <parameter name="TestFilePath" value="/TestList/7.0JYXY-LearningStatistics.xlsx"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="7.0JYXY-LearningStatistics.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+		    <test name="福建省会计资格统计">
+        <parameter name="TestFilePath" value="/TestList/7.0FJSKJ-SalesQualification.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0FJSKJ-SalesQualification.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建省会计商品统计">
+        <parameter name="TestFilePath" value="/TestList/7.0FJSKJ-CommoditySales.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0FJSKJ-CommoditySales.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="青海会计销售统计">
+        <parameter name="TestFilePath" value="/TestList/7.0QHKJ-CreditSaleStatistic.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0QHKJ-CreditSaleStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="青海会计选课统计">
+        <parameter name="TestFilePath" value="/TestList/7.0QHKJ-ChooseCourseStatistic.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0QHKJ-ChooseCourseStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="重庆会计销售统计">
+        <parameter name="TestFilePath" value="/TestList/7.0CQKJ-CreditSaleStatistic.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0CQKJ-CreditSaleStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="重庆会计选课统计">
+        <parameter name="TestFilePath" value="/TestList/7.0CQKJ-ChooseCourseStatistic.xlsx"/>
+        <parameter name="TIME" value="4"/>
+        <parameter name="TestName" value="7.0CQKJ-ChooseCourseStatistic.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+</suite>
