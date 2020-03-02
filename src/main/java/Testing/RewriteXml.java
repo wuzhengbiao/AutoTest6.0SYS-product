@@ -2,7 +2,7 @@ package Testing;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import BasicMethods.GetLocalConfig;
+import CollectionOfFunctionalMethods.BasicMethods.GetLocalConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -10,20 +10,20 @@ import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 public class RewriteXml {
     @BeforeTest
     public  void CreateTestngXml() throws IOException{
         String classPath=null;
+        String[] XmlContext= null;
         GetLocalConfig configclass=new GetLocalConfig();
         String config=configclass.ReadConfigFile();
-        String[] XmlContext= configclass.GetBySemicolonFromConfigFile(config);
+        XmlContext= configclass.GetBySemicolonFromConfigFile(config);
         //创建Document实例  
         Document document = DocumentHelper.createDocument();
         //记录要保存的xml文件位置  
         classPath=this.getClass().getResource("").getPath();
-        String Subsfilepath= StringUtils.substringBefore(classPath,"/target")+"/testng_StoreTestXml.xml";
+        String Subsfilepath= StringUtils.substringBefore(classPath,"/target")+"\\testng_StoreTestXml.xml";
         String xmlfilepath =java.net.URLDecoder.decode(Subsfilepath,"utf-8");
         System.out.print("xmlfilepath ="+xmlfilepath+"\n");
         //创建根节点suite，并设置name属性为xmlsuitename  
@@ -32,8 +32,8 @@ public class RewriteXml {
         Element listeners = root.addElement( "listeners" );
         listeners.addElement( "listener" ).addAttribute("class-name","org.uncommons.reportng.HTMLReporter");
         listeners.addElement( "listener" ).addAttribute("class-name","org.uncommons.reportng.JUnitXMLReporter");
-        listeners.addElement( "listener" ).addAttribute("class-name","BasicMethods.AssertionListener");
-        listeners.addElement( "listener" ).addAttribute("class-name","BasicMethods.OverrideIAnnotationTransformer");
+        listeners.addElement( "listener" ).addAttribute("class-name","CollectionOfFunctionalMethods.BasicMethods.AssertionListener");
+        listeners.addElement( "listener" ).addAttribute("class-name","OCollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer");
         for(int testnum=0;testnum<=XmlContext.length-1; testnum++)
         {
             System.out.print("get file name ="+XmlContext[testnum]+"\n");
@@ -44,6 +44,9 @@ public class RewriteXml {
             Element parameter= test.addElement( "parameter" );
             parameter.addAttribute("name", "TestFilePath");
             parameter.addAttribute("value", "/TestList/"+XmlContext[testnum].trim());
+            Element parameter4= test.addElement( "parameter" );
+            parameter4.addAttribute("name", "PlatformName");
+            parameter4.addAttribute("value", "动态TMP用例-"+XmlContext[testnum].trim());
             Element parameter2= test.addElement( "parameter" );
             parameter2.addAttribute("name", "TIME");
             parameter2.addAttribute("value", "20");

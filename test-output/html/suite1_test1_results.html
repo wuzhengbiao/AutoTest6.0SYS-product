@@ -3,24 +3,22 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - 会计学习</title>
+  <title>Test Results Report - 域名</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>会计学习</h1>
+<h1>域名</h1>
 <p>
-  Test duration: 72.026s
+  Test duration: 4.562s
 </p>
 
 
 
-
-
   <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
         <td colspan="3" class="group">Testing.Tester</td>
       </tr>
@@ -30,57 +28,114 @@
                   tester
       </td>
   <td class="duration">
-    72.026s
+    4.562s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"/TestList/hnzk.xlsx", 2, "hnzk.xlsx"</span><br />
+          <i>Method arguments: </i><span class="arguments">"/TestList/5.0SYSMoveHW.xlsx", 5, "5.0SYSMoveHW.xlsx"</span><br />
     
-            <div class="testOutput">
-                        No.1.0操作说明url<br/>
-操作时间: 2019-09-20 10:27:41<br />
-                                PHOTO..\..\hnzk.xlsxurljpg<br />
-                                No.2.0操作说明Username<br/>
-操作时间: 2019-09-20 10:27:52<br />
-                                PHOTO..\..\hnzk.xlsxUsernamejpg<br />
-                                No.3.0操作说明Password<br/>
-操作时间: 2019-09-20 10:27:55<br />
-                                PHOTO..\..\hnzk.xlsxPasswordjpg<br />
-                                No.4.0操作说明VerificationCode<br/>
-操作时间: 2019-09-20 10:27:58<br />
-                                PHOTO..\..\hnzk.xlsxVerificationCodejpg<br />
-                                No.5.0操作说明Loginbutton<br/>
-操作时间: 2019-09-20 10:28:01<br />
-                                PHOTO..\..\hnzk.xlsxLoginbuttonjpg<br />
-                                No.6.0操作说明click course management<br/>
-操作时间: 2019-09-20 10:28:04<br />
-                                PHOTO..\..\hnzk.xlsxclick course managementjpg<br />
-                                No.7.0操作说明click course<br/>
-操作时间: 2019-09-20 10:28:11<br />
-                                PHOTO..\..\hnzk.xlsxclick coursejpg<br />
-                                No.8.0操作说明enter course<br/>
-操作时间: 2019-09-20 10:28:17<br />
-                                PHOTO..\..\hnzk.xlsxenter coursejpg<br />
-                                No.9.0操作说明javajs<br/>
-操作时间: 2019-09-20 10:28:27<br />
-                                PHOTO..\..\hnzk.xlsxjavajsjpg<br />
-                                No.10.0操作说明wait<br/>
-操作时间: 2019-09-20 10:28:29<br />
-                                PHOTO..\..\hnzk.xlsxwaitjpg<br />
-                                No.11.0操作说明play1<br/>
-操作时间: 2019-09-20 10:28:35<br />
-                                前后比较成功 ,新获取文本值=0:05<br />
-                                PHOTO..\..\hnzk.xlsxplay1jpg<br />
-                                No.12.0操作说明play2<br/>
-操作时间: 2019-09-20 10:28:39<br />
-                                前后比较成功 ,新获取文本值=0:08<br />
-                                PHOTO..\..\hnzk.xlsxplay2jpg<br />
-                  </div>
-    
+        
 
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.apache.http.conn.HttpHostConnectException: Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:158)<br />
+              org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)<br />
+              org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)<br />
+              org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)<br />
+              org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)<br />
+              org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)<br />
+              org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)<br />
+              org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)<br />
+              macaca.client.common.Utils.executeRequest(Utils.java:89)<br />
+              macaca.client.common.Utils.postRequest(Utils.java:151)<br />
+              macaca.client.common.Utils.request(Utils.java:172)<br />
+              macaca.client.commands.Session.createSession(Session.java:40)<br />
+              macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)<br />
+              Init.InitDriver.MacacaInit(InitDriver.java:33)<br />
+              Testing.Tester.tester(Tester.java:28)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+              org.testng.TestNG.run(TestNG.java:1057)<br />
+              org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+              org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">java.net.ConnectException: Connection refused: connect</a><br />
+        <div class="stackTrace" id="exception-1">
+                      java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)<br />
+                      java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)<br />
+                      java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+                      java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+                      java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+                      java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)<br />
+                      java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+                      java.net.Socket.connect(Socket.java:589)<br />
+                      org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)<br />
+                      org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)<br />
+                      org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)<br />
+                      org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)<br />
+                      org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)<br />
+                      org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)<br />
+                      org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)<br />
+                      org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)<br />
+                      org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)<br />
+                      org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)<br />
+                      org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)<br />
+                      macaca.client.common.Utils.executeRequest(Utils.java:89)<br />
+                      macaca.client.common.Utils.postRequest(Utils.java:151)<br />
+                      macaca.client.common.Utils.request(Utils.java:172)<br />
+                      macaca.client.commands.Session.createSession(Session.java:40)<br />
+                      macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)<br />
+                      Init.InitDriver.MacacaInit(InitDriver.java:33)<br />
+                      Testing.Tester.tester(Tester.java:28)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:497)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+                      org.testng.TestNG.run(TestNG.java:1057)<br />
+                      org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+                      org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)<br />
+                  </div>
+          </div>
       </td>
 </tr>
       </table>
+
+
   
 </body>
 </html>

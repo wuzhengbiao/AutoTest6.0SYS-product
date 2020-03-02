@@ -4,15 +4,14 @@
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-        <listener class-name="BasicMethods.AssertionListener" />
-        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+        <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
+        <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
-
-    <test name="会计学习">
-        <!--以下是为@test方法中进行赋值20180612YFF-->
-        <parameter name="TestFilePath" value="/TestList/hnzk.xlsx"/>
-        <parameter name="TIME" value="2"/>
-        <parameter name="TestName" value="hnzk.xlsx"/>
+    <test name="域名">
+        <parameter name="TestFilePath" value="/TestList/5.0SYSMoveHW.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-域名"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="5.0SYSMoveHW.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>

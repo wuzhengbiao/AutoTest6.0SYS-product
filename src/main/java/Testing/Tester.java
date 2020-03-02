@@ -1,5 +1,8 @@
 package Testing;
 import BasicMethods.*;
+import CollectionOfFunctionalMethods.BasicMethods.*;
+import CollectionOfFunctionalMethods.DatabaseRelatedMethods.DataBase;
+import CollectionOfFunctionalMethods.DatabaseRelatedMethods.DatabaseDataOperation;
 import Com.*;
 import Init.InitDriver;
 import macaca.client.MacacaClient;
@@ -22,12 +25,14 @@ public class Tester  {
     //设置一个延迟时长从testng.xml文件中读取的变量
     public String ProgramPath;
     @Test
-    @Parameters({"TestFilePath" , "TIME" , "TestName"})
-    public void tester(String TestFilePath,int TIME,String TestName) throws Exception {
+    @Parameters({"TestFilePath" ,"PlatformName", "TIME" , "TestName"})
+    public void tester(String TestFilePath,String PlatformName,int TIME,String TestName) throws Exception {
         InitDriver Init= new InitDriver();
         MacacaClient driver=Init.MacacaInit();//macaca初始化对象
         Execute Execute = new Execute();
         AbnormalScreenshot Abnormal = new AbnormalScreenshot();
+        DataBase data=new DataBase();
+        DatabaseDataOperation Operation=new DatabaseDataOperation();
         int    QueryCount=0;//统计没有找到元素的次数
         int    ElementCount=1;//代替excle文本序列号
         String TestNameToEnglish=null;
@@ -36,7 +41,6 @@ public class Tester  {
         ProgramPath = StringUtils.substringBefore(ProgramPath,"/target");
         ProgramPath = StringUtils.substringAfter(ProgramPath,"file:/");
         ReadExcel reade = new ReadExcel();
-
         List<TestingCase> list =  reade.readXlsx(ProgramPath+TestFilePath);
         driver.maximize();
         if (list != null) {
@@ -52,12 +56,13 @@ public class Tester  {
                 String  img=".\\" + TestName + testCase.getDescription() + "jpg";
                 String  reportimg="PHOTO" + "..\\..\\" + TestName + testCase.getDescription() + "jpg";
                 /*System.out.print("步骤序列号:"+ElementCount+" ResultNum的查找元素状态返回值:"+ResultNum+"\n");*/
-                if(ResultNum==1)//判断元素
+                if(ResultNum==1)//查找元素正常
                 {
                     driver.sleep(2000);
                     driver.saveScreenshot(img);
                 }
                 else {
+                    //元素没有找到
                     if (ResultNum == 0) {
                         MapListCase.put(0, -1);//设置初始值，不然下面相减会报错
                         QueryCount++;
@@ -65,27 +70,45 @@ public class Tester  {
                     /*System.out.print("QueryCount统计没有找到元素的值:"+QueryCount+"\n");
                     System.out.print("MapListCase.get(QueryCount)的值:"+MapListCase.get(QueryCount)+"\n");
                     System.out.print("MapListCase.get(QueryCount-1)的值:"+MapListCase.get(QueryCount-1)+"\n");*/
-                        if (MapListCase.get(QueryCount) - MapListCase.get(QueryCount - 1) == 1)//判断是不是连续操作2次都报错
+                        if(MapListCase.get(QueryCount)-MapListCase.get(QueryCount-1)==1)//判断是不是连续操作2次都报错
                         {
                             driver.saveScreenshot(img);
-                            Reporter.log(reportimg);
-                            MailDelivery.TCTestCaseMailSending(1);
-                            Assert.assertEquals(ResultNum, 1, "No." + list.get(MapListCase.get(QueryCount - 1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount - 1)).getDescription() + "   原因： 找不到元素，有可能是定位错了，或者是流程出现未知的情况！！" + "\n操作时间: " + GetCurrentSystemTime.GetCurrentTime());
+                            Reporter.log(reportimg);//写入报告图片地址
+                            //连续2次步骤都报错,会进行断言,并停止程序执行
+                            MailDelivery.TCTestCaseMailSending(0);
+                            String insertexception1=Operation.DataToInsert(1,1,list.get(0).getModePath() ,PlatformName,0,GetCurrentSystemTime.GetCurrentTime(),"序号 No." + list.get(MapListCase.get(QueryCount-1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount-1)).getDescription() + "   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！");
+                            data.InsertDatabaseSql(insertexception1);
+                            Runtime.getRuntime().exec("taskkill /f /im chrome.exe");//调用dos命令杀死谷歌进程
+                            Assert.assertEquals(ResultNum, 1, "序号 No." + list.get(MapListCase.get(QueryCount-1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount-1)).getDescription() + "   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！");
                         }
                         MyAssertion.verifyEquals(ResultNum, 1, "No." + testCase.getId() + " 操作说明：" + testCase.getDescription() + "  没有找到元素！！" + "\n操作时间: " + GetCurrentSystemTime.GetCurrentTime());//捕获assert断言
                         driver.saveScreenshot(img);
-                    } else if (ResultNum == 3) {
-                        driver.sleep(30000);
+                    }
+                    //用于处理报表数据查询过大，加长等待时间
+                    else if (ResultNum == 3) {
                         driver.saveScreenshot(img);
-                    } else {
+                        String insertexception3=Operation.DataToInsert(0,0,list.get(0).getModePath(), PlatformName,Integer.parseInt(Execute.Returnbody),GetCurrentSystemTime.GetCurrentTime(),"每日订单数量统计 !!");
+                        data.InsertDatabaseSql(insertexception3);
+                    }
+                    //针对连接超时异常，跳过执行
+                    else if(ResultNum==5)
+                    {
+                        String insertexception3=Operation.DataToInsert(3,1,list.get(0).getModePath(),PlatformName,0, GetCurrentSystemTime.GetCurrentTime(),"连接超时异常！！");
+                        data.InsertDatabaseSql(insertexception3);
+                        continue;
+                    }
+                    else {
                         driver.sleep(2000);
                         driver.saveScreenshot(img);
                     }
                     int AbnormalStatus=Abnormal.WhetherCatchAbnormal(driver,img);//查找异常
+                    //查询到系统出现异常
                     if(AbnormalStatus==1)
                     {
+                        String insertexception2=Operation.DataToInsert(2,1,list.get(0).getModePath(), PlatformName, 0,GetCurrentSystemTime.GetCurrentTime(),"macaca检测平台有异常,联系对应项目经理!!!"+"\n"+Abnormal.AbnormalDetail);
+                        data.InsertDatabaseSql(insertexception2);
                         Reporter.log(reportimg);
-                        Assert.assertEquals(" do abnormal","no abnormal ","macaca检测平台有异常,联系对应项目经理!!!"+"\n");
+                        Assert.assertEquals(" do abnormal","no abnormal ","macaca检测平台有异常,联系对应项目经理!!!"+"\n"+Abnormal.AbnormalDetail);
                     }
                 }
                 Reporter.log(reportimg);

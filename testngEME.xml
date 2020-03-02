@@ -4,8 +4,8 @@
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-        <listener class-name="BasicMethods.AssertionListener" />
-        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+        <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
+        <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
        <test name="5.0山东考试">
         <!--以下是为@test方法中进行赋值-->

@@ -4,82 +4,210 @@
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-        <listener class-name="BasicMethods.AssertionListener" />
-        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+        <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
+        <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
+	    <test name="甘肃省直导入开通口">
+        <parameter name="TestFilePath" value="/TestList/GSSZZJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-甘肃省直导入开通口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="GSSZZJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+	    <test name="四川南瑞导入开通">
+        <parameter name="TestFilePath" value="/TestList/SCNRKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-四川南瑞导入开通"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="SCNRKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+	    <test name="四川华博导入开通">
+        <parameter name="TestFilePath" value="/TestList/SCHBKJFailedtoImport.xlsx"/>
+       <parameter name="PlatformName" value="值班checklist用例-四川华博导入开通"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="SCHBKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="重庆会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/CQKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-重庆会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="CQKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="青海会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/QHKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-青海会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="QHKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="辽宁盘锦会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/LNPJKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-辽宁盘锦会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="LNPJKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="新疆会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/XJBTKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-新疆会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="XJBTKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="安徽会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/AHKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-安徽会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="AHKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="安徽会计导入开通新口">
+        <parameter name="TestFilePath" value="/TestList/AHKJFailedtoImportNew.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-安徽会计导入开通新口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="AHKJFailedtoImportNew.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="厦门会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/XMKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-厦门会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="XMKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="厦门会计导入开通新口">
+        <parameter name="TestFilePath" value="/TestList/XMKJFailedtoImportNew.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-厦门会计导入开通新口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="XMKJFailedtoImportNew.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建省会计导入开通旧口">
+        <parameter name="TestFilePath" value="/TestList/SKJFailedtoImport.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-福建省会计导入开通旧口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="SKJFailedtoImport.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建省会计导入开通新口">
+        <parameter name="TestFilePath" value="/TestList/SKJFailedtoImportNew.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-福建省会计导入开通新口"/>
+        <parameter name="TIME" value="5"/>
+        <parameter name="TestName" value="SKJFailedtoImportNew.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
     <test name="福建省会计学分订单">
         <parameter name="TestFilePath" value="/TestList/7.0FJSKJorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="PlatformName" value="值班checklist用例-福建省会计学分订单"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0FJSKJorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="福建省会计发票查询">
+    <!--<test name="福建省会计发票查询">
         <parameter name="TestFilePath" value="/TestList/7.0FJSKJKJbillquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0FJSKJKJbillquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
-    <test name="福建省会计异常选课">
+    </test>-->
+    <!--<test name="福建省会计异常选课">
         <parameter name="TestFilePath" value="/TestList/7.0FJSKJAbnormalCourseQuery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0FJSKJAbnormalCourseQuery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+    </test>-->
     <test name="7.0青海会计订单查询">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/7.0QHKJorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="PlatformName" value="值班checklist用例-7.0青海会计订单查询"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0QHKJorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="7.0青海会计发票查询">
+    <test name="会计汇订单查询">
         <!--以下是为@test方法中进行赋值-->
+        <parameter name="TestFilePath" value="/TestList/KjhOrderNumber.xlsx"/>
+        <parameter name="PlatformName" value="值班checklist用例-会计汇订单查询"/>
+        <parameter name="TIME" value="20"/>
+        <parameter name="TestName" value="KjhOrderNumber.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <!--<test name="7.0青海会计发票查询">
         <parameter name="TestFilePath" value="/TestList/7.0QHKJbillquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0QHKJbillquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
-    <test name="7.0青海会计选课异常查询">
-        <!--以下是为@test方法中进行赋值-->
+    </test>-->
+    <!--<test name="7.0青海会计选课异常查询">
         <parameter name="TestFilePath" value="/TestList/7.0QHKJAbnormalCourseQuery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0QHKJAbnormalCourseQuery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+    </test>-->
    <test name="6.0四川建设个人和批次订单查询">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/6.0SCorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+       <parameter name="PlatformName" value="值班checklist用例-6.0四川建设个人和批次订单查询"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="6.0SCorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="6.0四川建设个人和批次发票查询">
-        <!--以下是为@test方法中进行赋值-->
+    <!--<test name="6.0四川建设个人和批次发票查询">
         <parameter name="TestFilePath" value="/TestList/6.0SCbillquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="6.0SCbillquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+    </test>-->
   <test name="7.0福建建设订单查询">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/7.0FJJSorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+      <parameter name="PlatformName" value="值班checklist用例-7.0福建建设订单查询"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0FJJSorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -98,38 +226,38 @@
  <test name="7.0甘肃专技个人和批次订单查询">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/7.0GSZJorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+     <parameter name="PlatformName" value="值班checklist用例-7.0甘肃专技个人和批次订单查询"/>
+        <parameter name="TIME" value="10"/>
         <parameter name="TestName" value="7.0GSZJorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="7.0甘肃专技个人发票查询">
-        <!--以下是为@test方法中进行赋值-->
+    <!--<test name="7.0甘肃专技个人发票查询">
         <parameter name="TestFilePath" value="/TestList/7.0GSZJbillquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0GSZJbillquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+    </test>-->
  <test name="7.0周口个人和批次订单查询">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/7.0ZKorderquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+     <parameter name="PlatformName" value="值班checklist用例-7.0周口个人和批次订单查询"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0ZKorderquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="7.0周口个人和批次发票查询">
-        <!--以下是为@test方法中进行赋值-->
+    <!--<test name="7.0周口个人和批次发票查询">
         <parameter name="TestFilePath" value="/TestList/7.0ZKbillquery.xlsx"/>
-        <parameter name="TIME" value="8"/>
+        <parameter name="TIME" value="20"/>
         <parameter name="TestName" value="7.0ZKbillquery.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+    </test>-->
 
  </suite>

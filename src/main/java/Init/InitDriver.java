@@ -1,5 +1,5 @@
 package Init;
-import BasicMethods.AssertionListener;
+import CollectionOfFunctionalMethods.BasicMethods.AssertionListener;
 import com.alibaba.fastjson.JSONObject;
 import macaca.client.MacacaClient;
 
@@ -30,7 +30,7 @@ public class InitDriver {
         jsono.put("port", Integer.parseInt(AssertionListener.port));
 
         desiredCapabilities.put("desiredCapabilities", jsono);
-        driver.initDriver(desiredCapabilities);
+        driver.initDriver(desiredCapabilities);//initDriver有传port和host值会默认修改
         return driver;
     }
 }

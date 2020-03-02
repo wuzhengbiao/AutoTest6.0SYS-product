@@ -4,28 +4,23 @@
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-        <listener class-name="BasicMethods.AssertionListener" />
-        <listener class-name="BasicMethods.OverrideIAnnotationTransformer"/>
+        <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
+        <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
-    <!--<test name="周口跳转复弘">
-        <parameter name="TestFilePath" value="/TestList/ZkJumpToFh.xlsx"/>
-        <parameter name="TIME" value="5"/>
-        <parameter name="TestName" value="ZkJumpToFh.xlsx"/>
-        <classes>
-            <class name="Testing.Tester"/>
-        </classes>
-    </test>-->
+
     <test name="测绘项目学员报名">
     <parameter name="TestFilePath" value="/TestList/buyclass-student.xlsx"/>
-    <parameter name="TIME" value="5"/>
+    <parameter name="PlatformName" value="核心用例-测绘项目学员报名"/>
+    <parameter name="TIME" value="2"/>
     <parameter name="TestName" value="buyclass-student.xlsx"/>
     <classes>
         <class name="Testing.Tester"/>
     </classes>
-</test>
+    </test>
     <test name="测绘项目退款">
         <parameter name="TestFilePath" value="/TestList/buyclass-admin.xlsx"/>
-        <parameter name="TIME" value="5"/>
+        <parameter name="PlatformName" value="核心用例-测绘项目退款"/>
+        <parameter name="TIME" value="2"/>
         <parameter name="TestName" value="buyclass-admin.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -34,7 +29,8 @@
 
     <test name="华为云视频播放检测">
         <parameter name="TestFilePath" value="/TestList/hnzk.xlsx"/>
-        <parameter name="TIME" value="20"/>
+        <parameter name="PlatformName" value="核心用例-周口华为云视频播放检测"/>
+        <parameter name="TIME" value="5"/>
         <parameter name="TestName" value="hnzk.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -43,7 +39,8 @@
 
     <test name="福建建设学习">
         <parameter name="TestFilePath" value="/TestList/7.0FujianConstructionStudy.xlsx"/>
-        <parameter name="TIME" value="5"/>
+        <parameter name="PlatformName" value="核心用例-福建建设学习"/>
+        <parameter name="TIME" value="2"/>
         <parameter name="TestName" value="7.0FujianConstructionStudy.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -51,7 +48,8 @@
     </test>
     <test name="南平学习">
         <parameter name="TestFilePath" value="/TestList/7.0NanpingPrensonStudy.xlsx"/>
-        <parameter name="TIME" value="5"/>
+        <parameter name="PlatformName" value="核心用例-南平学习"/>
+        <parameter name="TIME" value="2"/>
         <parameter name="TestName" value="7.0NanpingPrensonStudy.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -60,7 +58,8 @@
 
     <test name="四川建设报名">
        <parameter name="TestFilePath" value="/TestList/6.0SJbuyclass.xlsx"/>
-       <parameter name="TIME" value="5"/>
+        <parameter name="PlatformName" value="核心用例-四川建设报名"/>
+       <parameter name="TIME" value="2"/>
        <parameter name="TestName" value="6.0SJbuyclass.xlsx"/>
    <classes>
        <class name="Testing.Tester"/>
@@ -68,7 +67,8 @@
    </test>
        <test name="四川建设学习考试">
        <parameter name="TestFilePath" value="/TestList/6.0SCstudyexam.xlsx"/>
-       <parameter name="TIME" value="5"/>
+       <parameter name="PlatformName" value="核心用例-四川建设学习考试"/>
+       <parameter name="TIME" value="2"/>
        <parameter name="TestName" value="6.0SCstudyexam.xlsx"/>
    <classes>
        <class name="Testing.Tester"/>
@@ -109,7 +109,8 @@
   <test name="6.0山东平台学员学习">
         <!--以下是为@test方法中进行赋值20180319yff-->
         <parameter name="TestFilePath" value="/TestList/6.0sdstudy.xlsx"/>
-        <parameter name="TIME" value="5"/>
+      <parameter name="PlatformName" value="核心用例-6.0山东平台学员学习"/>
+      <parameter name="TIME" value="2"/>
         <parameter name="TestName" value="6.0sdstudy.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
@@ -130,7 +131,8 @@
     <test name="5.0学习考试">
         <!--以下是为@test方法中进行赋值-->
         <parameter name="TestFilePath" value="/TestList/5.0StudyExam.xlsx"/>
-        <parameter name="TIME" value="5"/>
+        <parameter name="PlatformName" value="核心用例-5.0学习考试"/>
+        <parameter name="TIME" value="2"/>
         <parameter name="TestName" value="5.0StudyExam.xlsx"/>
 
         <classes>
