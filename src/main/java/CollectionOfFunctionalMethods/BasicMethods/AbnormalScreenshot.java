@@ -11,7 +11,8 @@ public class AbnormalScreenshot {
     //  返回1：找到异常了,并展开明细
     private   String AbnormalXpath = "//*[@id=\"detail__\"]";
     private   String AbnormalXpathDetail="//*[@ng-click=\"msg.showMeItem=!msg.showMeItem\"]";
-    public    String AbnormalDetail=null;
+    public static final String AbnormalXpathDetailGetText="//*[@class=\"message-content ng-binding ng-scope\"]";//获取详细内容
+    public    String AbnormalDetailContent=null;
     public int WhetherCatchAbnormal(MacacaClient Driver,String img) throws Exception {
         int frequency=1;//查找次数
         try{
@@ -39,7 +40,7 @@ public class AbnormalScreenshot {
         Driver.elementByXPath(AbnormalXpath).click();
         Driver.sleep(1000);
         Driver.elementByXPath(AbnormalXpathDetail).click();
-        AbnormalDetail= Driver.elementByXPath(AbnormalXpathDetail).getText();
+        AbnormalDetailContent= Driver.elementByXPath(AbnormalXpathDetailGetText).getText();
         System.out.println("AbnormalXpathDetail 的定位："+AbnormalXpathDetail);
         Driver.sleep(1000);
         Driver.saveScreenshot(img);

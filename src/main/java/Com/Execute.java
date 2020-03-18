@@ -1,11 +1,14 @@
 package Com;
 
+import CollectionOfFunctionalMethods.BasicMethods.GetRandom;
 import CollectionOfFunctionalMethods.BasicMethods.RobotAction;
 import CollectionOfFunctionalMethods.BasicMethods.StringSubByContent;
 import macaca.client.MacacaClient;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -207,6 +210,38 @@ public class Execute {
             return 4;
         }
     }
+    else if(Testingcase.getModel().equals("多选"))
+        {
+            String[] RangeAndNum=null;
+            RangeAndNum=Testingcase.getText().split( "/" );
+            List random=new ArrayList();
+            random= GetRandom.randomArr(RangeAndNum[0]);
+            if(Testingcase.getModePath().contains("x"))
+            {
+                for(int n=0;n<Integer.parseInt(RangeAndNum[1]);n++) {
+                    System.out.print("生成的随机数： "+ random.get( n ).toString()+"\n");
+                    String NewPath = Testingcase.getModePath().replaceAll( "x", random.get( n ).toString() );
+                    System.out.print("随机生成的xpath路径 ： "+ NewPath+"\n");
+                    if (Driver.waitForElementByXPath( NewPath ) == null) {
+                        System.out.println( "找了四遍没有找到，开始等待！\n" );
+                        for (int i = 1; i <= T; i++)//可以自定义等待区间时长
+                        {
+                            Driver.sleep( 1000 );
+                            if (Driver.waitForElementByXPath( NewPath ) != null)//隔一秒查找元素
+                            {
+                                System.out.println( "等待了：" + i + "秒,找到元素了" );
+                                break;
+                            }
+                            if (i == T) {
+                                return 0;
+                            }
+                        }
+                    }
+                    Driver.elementByXPath( NewPath ).click();
+                }
+            }
+            return 1;
+        }
     else if (Testingcase.getModel().equals("等待")){
         int i = 0;
         do {
