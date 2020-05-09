@@ -1,7 +1,10 @@
 package Init;
 import CollectionOfFunctionalMethods.BasicMethods.AssertionListener;
+import CollectionOfFunctionalMethods.BasicMethods.EventListenerMonitoring;
+import CollectionOfFunctionalMethods.BasicMethods.GetCurrentSystemTime;
 import com.alibaba.fastjson.JSONObject;
 import macaca.client.MacacaClient;
+import org.testng.Reporter;
 
 /**
  * Created by admin on 2017/10/27.
@@ -30,7 +33,16 @@ public class InitDriver {
         jsono.put("port", Integer.parseInt(AssertionListener.port));
 
         desiredCapabilities.put("desiredCapabilities", jsono);
-        driver.initDriver(desiredCapabilities);//initDriver有传port和host值会默认修改
+        try{
+            driver.initDriver(desiredCapabilities);//initDriver有传port和host值会默认修改
+        }
+        catch(org.apache.http.conn.HttpHostConnectException e){
+            System.out.print("启动失败！");
+            EventListenerMonitoring.Listenerflag = 2;
+            Reporter.log( "<p  style=\"color:red\">"+" Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect"+"</p>");
+
+        }
+
         return driver;
     }
 }

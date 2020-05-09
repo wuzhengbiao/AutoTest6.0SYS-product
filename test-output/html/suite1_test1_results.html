@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - 域名</title>
+  <title>Test Results Report - 南平学习</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>域名</h1>
+<h1>南平学习</h1>
 <p>
-  Test duration: 4.562s
+  Test duration: 6.636s
 </p>
 
 
@@ -28,13 +28,16 @@
                   tester
       </td>
   <td class="duration">
-    4.562s
+    6.636s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"/TestList/5.0SYSMoveHW.xlsx", 5, "5.0SYSMoveHW.xlsx"</span><br />
+          <i>Method arguments: </i><span class="arguments">"/TestList/7.0FujianConstructionStudy.xlsx", "核心用例-南平学习", 2, "7.0FujianConstructionStudy.xlsx"</span><br />
     
-        
+            <div class="testOutput">
+                        &lt;p&nbsp; style=&quot;color:red&quot;&gt; Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect&lt;/p&gt;<br />
+                  </div>
+    
 
         <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.apache.http.conn.HttpHostConnectException: Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect</b></a><br />
     <div class="stackTrace" id="exception-0">
@@ -51,10 +54,9 @@
               macaca.client.common.Utils.executeRequest(Utils.java:89)<br />
               macaca.client.common.Utils.postRequest(Utils.java:151)<br />
               macaca.client.common.Utils.request(Utils.java:172)<br />
-              macaca.client.commands.Session.createSession(Session.java:40)<br />
-              macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)<br />
-              Init.InitDriver.MacacaInit(InitDriver.java:33)<br />
-              Testing.Tester.tester(Tester.java:28)<br />
+              macaca.client.commands.Window.maximize(Window.java:49)<br />
+              macaca.client.MacacaClient.maximize(MacacaClient.java:1339)<br />
+              Testing.Tester.tester(Tester.java:44)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -102,10 +104,9 @@
                       macaca.client.common.Utils.executeRequest(Utils.java:89)<br />
                       macaca.client.common.Utils.postRequest(Utils.java:151)<br />
                       macaca.client.common.Utils.request(Utils.java:172)<br />
-                      macaca.client.commands.Session.createSession(Session.java:40)<br />
-                      macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)<br />
-                      Init.InitDriver.MacacaInit(InitDriver.java:33)<br />
-                      Testing.Tester.tester(Tester.java:28)<br />
+                      macaca.client.commands.Window.maximize(Window.java:49)<br />
+                      macaca.client.MacacaClient.maximize(MacacaClient.java:1339)<br />
+                      Testing.Tester.tester(Tester.java:44)<br />
                       sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
                       sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
                       sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />

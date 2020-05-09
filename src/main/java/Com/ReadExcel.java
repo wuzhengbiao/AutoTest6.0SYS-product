@@ -33,7 +33,6 @@ import java.util.ArrayList;
  * 本类都是对.xlsx的操作
  */
 public class ReadExcel {
-
     /**
      * read the Excel file
      * @param path the path of the Excel file
@@ -87,7 +86,8 @@ public class ReadExcel {
                     XSSFCell mode = xssfRow.getCell(3);
                     XSSFCell modepath = xssfRow.getCell(4);
                     XSSFCell text = xssfRow.getCell(5);
-                    XSSFCell whereskip = xssfRow.getCell(6);
+                    XSSFCell AppAuthentication = xssfRow.getCell(6);
+                    XSSFCell whereskip = xssfRow.getCell(7);
                     String ReturnForm = ProcessingExcelDataTypes(text, getValue(text));//调用数据处理方法
                     testingCase.setId(getValue(no));
                     testingCase.setDescription(getValue(description));
@@ -95,6 +95,12 @@ public class ReadExcel {
                     testingCase.setMode(getValue(mode));
                     testingCase.setModePath(getValue(modepath));
                     testingCase.setText(ReturnForm);
+                    try{
+                        testingCase.setAppAuthentication(getValue(AppAuthentication));
+                    }
+                    catch (Exception e) {
+                        testingCase.setAppAuthentication("空");
+                    }
                     try{
                         testingCase.setWhetherskip(getValue(whereskip));
                     }

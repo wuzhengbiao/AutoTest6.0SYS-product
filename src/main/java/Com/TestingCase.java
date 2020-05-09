@@ -33,7 +33,10 @@ public class TestingCase {
      */
     private String whetherskip;
 
-
+    private String AppAuthentication;
+    /**
+     * app授权码，只用于接口请求
+     */
 
     public String getId() { return id; }
 
@@ -82,6 +85,12 @@ public class TestingCase {
     public void setWhetherskip(String whetherskip) {
         this.whetherskip = whetherskip;
     }
+    public String getAppAuthentication() {
+        return AppAuthentication;
+    }
 
+    public void setAppAuthentication(String AppAuthentication) {
+        this.AppAuthentication = AppAuthentication;
+    }
 
 }

@@ -13,16 +13,19 @@ import org.testng.TestListenerAdapter;
 //TestListenerAdapter 已经实现 ITestListener，并且提供了一些有用的方法，比如分别获取所有成功失败跳过三种测试结果的测试方法的方法
 public class AssertionListener extends TestListenerAdapter {
     public  static String  port="";
+    private int index = 0;
     @Override
     public void onTestStart(ITestResult result) {
         MyAssertion.flag = true;
+        EventListenerMonitoring.Listenerflag=1;
         MyAssertion.errors.clear();
         port= QueryMacacaSeverPort.GetMacacaServerPort();
         System.out.println("Testng的监听器onTestStart！！端口号="+port);
     }
     @Override
     public void onTestFailure(ITestResult tr) {
-        this.handleAssertion(tr,1);
+        this.handleAssertion(tr);
+        EventListenerMonitoring.EventListenerControl( tr );
         try {
             MailDelivery.TCTestCaseMailSending(1);
         } catch (Exception e) {
@@ -33,22 +36,21 @@ public class AssertionListener extends TestListenerAdapter {
 
     @Override
     public void onTestSkipped(ITestResult tr) {
-        this.handleAssertion(tr,0);
+        this.handleAssertion(tr);
+        EventListenerMonitoring.EventListenerControl( tr );
         System.out.println("Testng的监听器onTestSkipped！！");
     }
     @Override
     public void onTestSuccess(ITestResult tr) {
-        this.handleAssertion(tr,0);
+        this.handleAssertion(tr);
+        EventListenerMonitoring.EventListenerControl( tr );
         System.out.println("Testng的监听器onTestSuccess！！");
     }
-
-    private int index = 0;
-
     /**
      * 收集断言异常结果并输出
      * @author wzb
      */
-    private void handleAssertion(ITestResult tr,int ListenStatus){
+    private void handleAssertion(ITestResult tr){
         if(!MyAssertion.flag){ //为假，就是断言出错了就执行下面的
             //获取异常
             Throwable throwable = tr.getThrowable();
@@ -84,14 +86,6 @@ public class AssertionListener extends TestListenerAdapter {
             MyAssertion.flag = true;
             MyAssertion.errors.clear();
             //输出异常信息
-
-            if(ListenStatus==1)
-            {
-                tr.setStatus(ITestResult.FAILURE);
-            }
-            else{
-                tr.setStatus(ITestResult.SKIP);
-            }
         }
     }
 

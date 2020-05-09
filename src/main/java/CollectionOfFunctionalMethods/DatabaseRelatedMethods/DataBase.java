@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-    private final String URL = "jdbc:mysql://192.168.1.15:1234/macaca?characterEncoding=utf8&useSSL=true";
-    private final String NAME = "root";
-    private final String PASSWORD = "123456";
+    private final String URL = "jdbc:mysql://192.168.1.66:1234/macaca?characterEncoding=utf8&useSSL=true";
+    private final String NAME = "hbjy6_java";
+    private final String PASSWORD = "xwzKuBKTvC5znzfk";
     private Connection conn = null;
 
     public Connection  DatabaseSqlConect() throws SQLException {

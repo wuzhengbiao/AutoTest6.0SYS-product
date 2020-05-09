@@ -5,6 +5,10 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+import sun.security.util.Length;
+
+import java.util.ArrayList;
+
 public class ChineseToEnglish {
     //将中文转换为英文
     public static String getEname(String name) throws BadHanyuPinyinOutputFormatCombination
@@ -48,5 +52,4 @@ public class ChineseToEnglish {
                 str.substring(1, str.length()));
         return newstr.toString();
     }
-
 }

@@ -20,6 +20,7 @@ public class MailDelivery {
     // 发件人邮箱的 SMTP 服务器地址, 可以登录web邮箱查询
     public static String sendEmailSMTPHost = "smtp.qq.com";
     // 收件人邮箱地址
+    public static String TestNgType = "";//用例区分
     public static String receiveMailAccount = "942189908@qq.com";
     public static void TCTestCaseMailSending(int isSendMailValue) throws Exception {
         // 参数配置
@@ -35,7 +36,7 @@ public class MailDelivery {
         session.setDebug(true);   // 设置为debug模式, 可以查看详细的发送 log
         try{
                 // 创建一封邮件
-                Message message = createMimeMessage(session, sendEmailAccount, receiveMailAccount);
+                Message message = createMimeMessage(session, sendEmailAccount, receiveMailAccount,TestNgType);
                 // 根据 Session 获取邮件传输对象
                 Transport transport = session.getTransport();
                 // 使用 邮箱账号 和 密码 连接邮件服务器, 这里认证的邮箱必须与 message 中的发件人邮箱一致, 否则会报错
@@ -60,15 +61,40 @@ public class MailDelivery {
     /**
      * 创建一封简单邮件
      */
-    private static Message createMimeMessage(Session session, String sendMail, String receiveMail) throws Exception {
+    private static Message createMimeMessage(Session session, String sendMail, String receiveMail,String testngType) throws Exception {
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(sendMail));
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail));
-        // 设置邮件标题
-        message.setSubject("TC现网测试用例报告反馈结果");
-        // 设置邮件正文
-        message.setText("TC测试用例执行失败了,请点击后面的url查看报告结果  http://macaca.fjchjlan.59iedu.com:1457/History/TheReport/surefire-reports/html/index.html");
-        message.setSentDate(new Date());
+        if(testngType.contains( "值班" ))
+        {
+            // 设置邮件标题
+            message.setSubject("《TC值班用例报告反馈结果》");
+            // 设置邮件正文
+            message.setText("TC现网值班用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_chelist/surefire-reports/html/index.html");
+        }
+       else if(testngType.contains( "报表" ))
+        {
+            // 设置邮件标题
+            message.setSubject("《TC报表用例报告反馈结果》");
+            // 设置邮件正文
+            message.setText("TC现网报表用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_pt/surefire-reports/html/index.html");
+        }
+        else if(testngType.contains( "动态" ))
+        {
+            // 设置邮件标题
+            message.setSubject("《TC动态临时用例报告反馈结果》");
+            // 设置邮件正文
+            message.setText("TC现网动态临时用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReportTMP/surefire-reports/html/index.html");
+        }
+        else
+        {
+            // 设置邮件标题
+            message.setSubject("《TC核心用例报告反馈结果》");
+            // 设置邮件正文
+            message.setText("TC现网核心用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport/surefire-reports/html/index.html");
+        }
+
+message.setSentDate(new Date());
         //保存设置
         message.saveChanges();
         return message;

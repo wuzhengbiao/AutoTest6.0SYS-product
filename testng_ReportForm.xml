@@ -61,6 +61,24 @@
             <class name="Testing.Tester"/>
         </classes>
     </test>-->
+	    <test name="安徽专技开通统计">
+       <parameter name="TestFilePath" value="/TestList/7.0AHZJ-ClassOpenStatistics.xlsx "/>
+        <parameter name="PlatformName" value="报表用例-安徽专技开通统计"/>
+       <parameter name="TIME" value="4"/>
+       <parameter name="TestName" value="7.0AHZJ-ClassOpenStatistics.xlsx "/>
+       <classes>
+           <class name="Testing.Tester"/>
+       </classes>
+   </test>
+   <test name="安徽专技学习统计">
+       <parameter name="TestFilePath" value="/TestList/7.0AHZJ-LearningStatistics.xlsx"/>
+       <parameter name="PlatformName" value="报表用例-安徽专技学习统计"/>
+       <parameter name="TIME" value="4"/>
+       <parameter name="TestName" value="7.0AHZJ-LearningStatistics.xlsx"/>
+       <classes>
+           <class name="Testing.Tester"/>
+       </classes>
+   </test>
 
     <test name="四川开通统计">
        <parameter name="TestFilePath" value="/TestList/6.0SCJS-ClassOpenStatistics.xlsx"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="域名"
+<testsuite name="南平学习"
            tests="1"
            failures="1"
            errors="0"
            skipped="0"
-           time="4.562">
+           time="6.636">
   <properties />
-            <testcase name="tester" time="4.562" classname="Testing.Tester">
+            <testcase name="tester" time="6.636" classname="Testing.Tester">
                 <failure type="org.apache.http.conn.HttpHostConnectException"
                   message="Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect"
               >
@@ -24,10 +24,9 @@
   macaca.client.common.Utils.executeRequest(Utils.java:89)
   macaca.client.common.Utils.postRequest(Utils.java:151)
   macaca.client.common.Utils.request(Utils.java:172)
-  macaca.client.commands.Session.createSession(Session.java:40)
-  macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)
-  Init.InitDriver.MacacaInit(InitDriver.java:33)
-  Testing.Tester.tester(Tester.java:28)
+  macaca.client.commands.Window.maximize(Window.java:49)
+  macaca.client.MacacaClient.maximize(MacacaClient.java:1339)
+  Testing.Tester.tester(Tester.java:44)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -74,10 +73,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
   macaca.client.common.Utils.executeRequest(Utils.java:89)
   macaca.client.common.Utils.postRequest(Utils.java:151)
   macaca.client.common.Utils.request(Utils.java:172)
-  macaca.client.commands.Session.createSession(Session.java:40)
-  macaca.client.MacacaClient.initDriver(MacacaClient.java:1183)
-  Init.InitDriver.MacacaInit(InitDriver.java:33)
-  Testing.Tester.tester(Tester.java:28)
+  macaca.client.commands.Window.maximize(Window.java:49)
+  macaca.client.MacacaClient.maximize(MacacaClient.java:1339)
+  Testing.Tester.tester(Tester.java:44)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -7,13 +7,13 @@
         <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
         <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
-    <test name="华为云视频播放检测">
-        <parameter name="TestFilePath" value="/TestList/GSZJ.xlsx"/>
-        <parameter name="PlatformName" value="核心用例-甘肃专技华为云视频播放检测"/>
-        <parameter name="TIME" value="5"/>
-        <parameter name="TestName" value="GSZJ.xlsx"/>
+    <test name="Grahql接口测试">
+        <parameter name="TestFilePath" value="/TestList/Graphql.xlsx"/>
+        <parameter name="PlatformName" value="四川建设考前"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="Graphql.xlsx"/>
         <classes>
-            <class name="Testing.Tester"/>
+            <class name="Testing.InterfaceTest"/>
         </classes>
     </test>
 

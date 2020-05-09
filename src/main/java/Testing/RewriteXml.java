@@ -33,13 +33,13 @@ public class RewriteXml {
         listeners.addElement( "listener" ).addAttribute("class-name","org.uncommons.reportng.HTMLReporter");
         listeners.addElement( "listener" ).addAttribute("class-name","org.uncommons.reportng.JUnitXMLReporter");
         listeners.addElement( "listener" ).addAttribute("class-name","CollectionOfFunctionalMethods.BasicMethods.AssertionListener");
-        listeners.addElement( "listener" ).addAttribute("class-name","OCollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer");
+        listeners.addElement( "listener" ).addAttribute("class-name","CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer");
         for(int testnum=0;testnum<=XmlContext.length-1; testnum++)
         {
             System.out.print("get file name ="+XmlContext[testnum]+"\n");
             //创建节点test，并设置name、属性  
             String testcasename=XmlContext[testnum].trim().substring(0, XmlContext[testnum].trim().indexOf(".xls"));
-            Element test = root.addElement( "test" ).addAttribute("name", "现网用例__"+testcasename);
+            Element test = root.addElement( "test" ).addAttribute("name", "现网测试用例_"+testcasename+"_调试");
             //创建xml的参数值
             Element parameter= test.addElement( "parameter" );
             parameter.addAttribute("name", "TestFilePath");

@@ -8,7 +8,35 @@
         <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
 
-    <test name="测绘项目学员报名">
+    <test name="安徽专技学员学习">
+        <parameter name="TestFilePath" value="/TestList/7.0AHZJSZstudy.xlsx"/>
+        <parameter name="PlatformName" value="核心用例-7.0安徽专技学员学习"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="7.0AHZJSZstudy.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="甘肃专技学员学习">
+        <parameter name="TestFilePath" value="/TestList/7.0GSSZstudy.xlsx"/>
+        <parameter name="PlatformName" value="核心用例-7.0甘肃专技学员学习"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="7.0GSSZstudy.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+    <test name="福建会计学员学习">
+        <parameter name="TestFilePath" value="/TestList/fjkj200507.xlsx"/>
+        <parameter name="PlatformName" value="核心用例-7.0福建会计学员学习"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="fjkj200507.xlsx"/>
+        <classes>
+            <class name="Testing.Tester"/>
+        </classes>
+    </test>
+
+    <test name="原马尾-测绘项目学员报名">
     <parameter name="TestFilePath" value="/TestList/buyclass-student.xlsx"/>
     <parameter name="PlatformName" value="核心用例-测绘项目学员报名"/>
     <parameter name="TIME" value="2"/>
@@ -17,7 +45,7 @@
         <class name="Testing.Tester"/>
     </classes>
     </test>
-    <test name="测绘项目退款">
+    <test name="原马尾-测绘项目退款">
         <parameter name="TestFilePath" value="/TestList/buyclass-admin.xlsx"/>
         <parameter name="PlatformName" value="核心用例-测绘项目退款"/>
         <parameter name="TIME" value="2"/>
@@ -28,10 +56,10 @@
     </test>
 
     <test name="华为云视频播放检测">
-        <parameter name="TestFilePath" value="/TestList/hnzk.xlsx"/>
-        <parameter name="PlatformName" value="核心用例-周口华为云视频播放检测"/>
+        <parameter name="TestFilePath" value="/TestList/GSZJ.xlsx"/>
+        <parameter name="PlatformName" value="核心用例-福建建设华为云视频播放检测"/>
         <parameter name="TIME" value="5"/>
-        <parameter name="TestName" value="hnzk.xlsx"/>
+        <parameter name="TestName" value="GSZJ.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>
@@ -46,16 +74,6 @@
             <class name="Testing.Tester"/>
         </classes>
     </test>
-    <test name="南平学习">
-        <parameter name="TestFilePath" value="/TestList/7.0NanpingPrensonStudy.xlsx"/>
-        <parameter name="PlatformName" value="核心用例-南平学习"/>
-        <parameter name="TIME" value="2"/>
-        <parameter name="TestName" value="7.0NanpingPrensonStudy.xlsx"/>
-        <classes>
-            <class name="Testing.Tester"/>
-        </classes>
-    </test>
-
     <test name="四川建设报名">
        <parameter name="TestFilePath" value="/TestList/6.0SJbuyclass.xlsx"/>
         <parameter name="PlatformName" value="核心用例-四川建设报名"/>
@@ -106,7 +124,7 @@
     </classes>
   </test-->
 
-  <test name="6.0山东平台学员学习">
+  <test name="原马尾-6.0山东平台学员学习">
         <!--以下是为@test方法中进行赋值20180319yff-->
         <parameter name="TestFilePath" value="/TestList/6.0sdstudy.xlsx"/>
       <parameter name="PlatformName" value="核心用例-6.0山东平台学员学习"/>

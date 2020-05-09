@@ -1,5 +1,5 @@
 package Testing;
-import BasicMethods.*;
+import CollectionOfFunctionalMethods.BasicMethods.*;
 import CollectionOfFunctionalMethods.BasicMethods.*;
 import CollectionOfFunctionalMethods.DatabaseRelatedMethods.DataBase;
 import CollectionOfFunctionalMethods.DatabaseRelatedMethods.DatabaseDataOperation;
@@ -11,7 +11,6 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +34,7 @@ public class Tester  {
         DatabaseDataOperation Operation=new DatabaseDataOperation();
         int    QueryCount=0;//统计没有找到元素的次数
         int    ElementCount=1;//代替excle文本序列号
-        String TestNameToEnglish=null;
+        MailDelivery.TestNgType=PlatformName;
         Map<Integer,Integer> MapListCase = new HashMap<Integer, Integer>();//储存没找到元素的序号
         ProgramPath = URLDecoder.decode(Tester.class.getResource("").toString(),"UTF-8");
         ProgramPath = StringUtils.substringBefore(ProgramPath,"/target");
@@ -48,8 +47,7 @@ public class Tester  {
                 //输出读取对应的用例正行内容
                 System.out.println("No." + testCase.getId() + "操作说明" + testCase.getDescription() + ",操作方法:" + testCase.getModel() + ",获取元素方法:" + testCase.getMode() + ",获取元素路径:" + testCase.getModePath() + ",文本内容:" + testCase.getText());
 //                Reporter.log("No." + testCase.getId() + "操作说明" + testCase.getDescription() + "_操作方法:" + testCase.getModel() + "_获取元素方法_" + testCase.getMode() + "_获取元素路径_" + testCase.getModePath() + "_文本内容_" + testCase.getText());
-                Reporter.log( "No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime());
-                //整行表格数据传入，并对获取的内容进行实质性执行用例
+     //整行表格数据传入，并对获取的内容进行实质性执行用例
               //  System.out.println(".\\" + TestName + testCase.getDescription() + "jpg");
                 int ResultNum=Execute.execute(driver,testCase,TIME);//开始执行macaca用例
                 System.out.println("ResultNum="+ResultNum+"\n");
@@ -59,6 +57,7 @@ public class Tester  {
                 if(ResultNum==1)//查找元素正常
                 {
                     driver.sleep(2000);
+                    Reporter.log( "No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime());
                     driver.saveScreenshot(img);
                 }
                 else {
@@ -67,37 +66,46 @@ public class Tester  {
                         MapListCase.put(0, -1);//设置初始值，不然下面相减会报错
                         QueryCount++;
                         MapListCase.put(QueryCount, ElementCount);//存储没有找到元素的列表信息
-                    /*System.out.print("QueryCount统计没有找到元素的值:"+QueryCount+"\n");
-                    System.out.print("MapListCase.get(QueryCount)的值:"+MapListCase.get(QueryCount)+"\n");
-                    System.out.print("MapListCase.get(QueryCount-1)的值:"+MapListCase.get(QueryCount-1)+"\n");*/
+                     /*   if (list.get( ElementCount - 2 ).getModel().contains( "访问" )) {
+                            MyAssertion.verifyEquals( ResultNum, 1, "No." + testCase.getId() + " 操作说明：" + testCase.getDescription() + "  没有找到元素！！" + "\n操作时间: " + GetCurrentSystemTime.GetCurrentTime() );//捕获assert断言
+                            EventListenerMonitoring.Listenerflag = 3;
+                            driver.saveScreenshot(img);
+                            Reporter.log(reportimg);//写入报告图片地址
+                        }*/
                         if(MapListCase.get(QueryCount)-MapListCase.get(QueryCount-1)==1)//判断是不是连续操作2次都报错
                         {
+                            Reporter.log( "<p  style=\"color:red\">"+"No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime()+"</p>");
                             driver.saveScreenshot(img);
                             Reporter.log(reportimg);//写入报告图片地址
                             //连续2次步骤都报错,会进行断言,并停止程序执行
-                            MailDelivery.TCTestCaseMailSending(0);
-                            String insertexception1=Operation.DataToInsert(1,1,list.get(0).getModePath() ,PlatformName,0,GetCurrentSystemTime.GetCurrentTime(),"序号 No." + list.get(MapListCase.get(QueryCount-1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount-1)).getDescription() + "   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！");
+                            String insertexception1=Operation.DataToInsertAbnormal(1,1,list.get(0).getModePath() ,PlatformName,0,GetCurrentSystemTime.GetCurrentTime(),"序号 No." + list.get(MapListCase.get(QueryCount-1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount-1)).getDescription() + "   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！");
                             data.InsertDatabaseSql(insertexception1);
                             Runtime.getRuntime().exec("taskkill /f /im chrome.exe");//调用dos命令杀死谷歌进程
+                            EventListenerMonitoring.Listenerflag = 2;
                             Assert.assertEquals(ResultNum, 1, "序号 No." + list.get(MapListCase.get(QueryCount-1)).getId() + ", 操作说明：" + list.get(MapListCase.get(QueryCount-1)).getDescription() + "   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！");
                         }
-                        MyAssertion.verifyEquals(ResultNum, 1, "No." + testCase.getId() + " 操作说明：" + testCase.getDescription() + "  没有找到元素！！" + "\n操作时间: " + GetCurrentSystemTime.GetCurrentTime());//捕获assert断言
-                        driver.saveScreenshot(img);
+                           Reporter.log( "<p  style=\"color:DarkOrange \">"+"No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime()+"</p>");
+                            EventListenerMonitoring.Listenerflag = 3;
+                            MyAssertion.verifyEquals( ResultNum, 1, "No." + testCase.getId() + " 操作说明：" + testCase.getDescription() + "  没有找到元素！！" + "\n操作时间: " + GetCurrentSystemTime.GetCurrentTime() );//捕获assert断言
+                            driver.saveScreenshot( img );
                     }
                     //用于处理报表数据查询过大，加长等待时间
                     else if (ResultNum == 3) {
+                        Reporter.log( "No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime());
                         driver.saveScreenshot(img);
-                        String insertexception3=Operation.DataToInsert(0,0,list.get(0).getModePath(), PlatformName,Integer.parseInt(Execute.Returnbody),GetCurrentSystemTime.GetCurrentTime(),"每日订单数量统计 !!");
+                        String insertexception3=Operation.DataToInsertStatictics(list.get(0).getModePath(), PlatformName,Integer.parseInt(Execute.Returnbody),GetCurrentSystemTime.GetCurrentTime(),"每日订单数量统计 !!");
                         data.InsertDatabaseSql(insertexception3);
                     }
                     //针对连接超时异常，跳过执行
                     else if(ResultNum==5)
                     {
-                        String insertexception3=Operation.DataToInsert(3,1,list.get(0).getModePath(),PlatformName,0, GetCurrentSystemTime.GetCurrentTime(),"连接超时异常！！");
+                        Reporter.log( "<p  style=\"color:DarkOrange \">"+"No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime()+"</p>");
+                        String insertexception3=Operation.DataToInsertAbnormal(3,1,list.get(0).getModePath(),PlatformName,0, GetCurrentSystemTime.GetCurrentTime(),"连接超时异常！！");
                         data.InsertDatabaseSql(insertexception3);
                         continue;
                     }
                     else {
+                        Reporter.log( "No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime());
                         driver.sleep(2000);
                         driver.saveScreenshot(img);
                     }
@@ -105,10 +113,13 @@ public class Tester  {
                     //查询到系统出现异常
                     if(AbnormalStatus==1)
                     {
-                        String insertexception2=Operation.DataToInsert(2,1,list.get(0).getModePath(), PlatformName, 0,GetCurrentSystemTime.GetCurrentTime(),"macaca检测平台有异常,联系对应项目经理!!!"+"\n"+Abnormal.AbnormalDetail);
+                       // Reporter.log( "<p  style=\"color:MediumVioletRed \">"+"No." + testCase.getId() + "操作说明" + testCase.getDescription()+"\n操作时间: "+ GetCurrentSystemTime.GetCurrentTime()+"</p>");
+                        String insertexception2=Operation.DataToInsertAbnormal(2,1,list.get(0).getModePath(), PlatformName, 0,GetCurrentSystemTime.GetCurrentTime(),"macaca检测平台有异常,联系对应项目经理!!!"+"\n"+Abnormal.AbnormalDetailContent);
                         data.InsertDatabaseSql(insertexception2);
                         Reporter.log(reportimg);
-                        Assert.assertEquals(" do abnormal","no abnormal ","macaca检测平台有异常,联系对应项目经理!!!"+"\n"+Abnormal.AbnormalDetail);
+                        System.out.print("AbnormalDetailContent= :"+Abnormal.AbnormalDetailContent+"\n");
+                        EventListenerMonitoring.Listenerflag = 2;
+                        Assert.assertEquals(" do abnormal","no abnormal ","macaca检测平台有异常!!异常信息如下： "+"\n"+Abnormal.AbnormalDetailContent);
                     }
                 }
                 Reporter.log(reportimg);

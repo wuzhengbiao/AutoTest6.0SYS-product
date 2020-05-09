@@ -1,5 +1,6 @@
 package Com;
 
+import CollectionOfFunctionalMethods.BasicMethods.EventListenerMonitoring;
 import CollectionOfFunctionalMethods.BasicMethods.GetRandom;
 import CollectionOfFunctionalMethods.BasicMethods.RobotAction;
 import CollectionOfFunctionalMethods.BasicMethods.StringSubByContent;
@@ -47,6 +48,7 @@ public class Execute {
             for (int i=1; i <= T; i++)//可以自定义等待区间时长
             {
                 Driver.sleep(1000);
+                Driver.frame(  )
                 if(Driver.waitForElementByXPath(Testingcase.getModePath())!=null)//隔一秒查找元素,找到元素跳出等待
                 {
                     break;
@@ -56,7 +58,7 @@ public class Execute {
                 }
             }
         }
-                Driver.elementByXPath(Testingcase.getModePath()).clearText();
+              //  Driver.elementByXPath(Testingcase.getModePath()).clearText();
                 Driver.elementByXPath(Testingcase.getModePath()).sendKeys(Testingcase.getText());
                 return 1;
     }catch (Exception e) {
@@ -157,7 +159,8 @@ public class Execute {
             if (Testingcase.getText().equals("相等")) {
                 Reporter.log("前后比较成功 ,新获取文本值=" + Aftertime);//写入报告图片地址
             }
-            else{           
+            else{
+                EventListenerMonitoring.Listenerflag = 2;
 				Assert.assertEquals("相等", "不相等", "前后值比较失败啦!初始值="+beforetime+" 比较值= "+Aftertime);
             }
         }
