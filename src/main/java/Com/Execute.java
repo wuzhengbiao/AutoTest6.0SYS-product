@@ -48,7 +48,6 @@ public class Execute {
             for (int i=1; i <= T; i++)//可以自定义等待区间时长
             {
                 Driver.sleep(1000);
-                Driver.frame(  )
                 if(Driver.waitForElementByXPath(Testingcase.getModePath())!=null)//隔一秒查找元素,找到元素跳出等待
                 {
                     break;
