@@ -1,4 +1,11 @@
-﻿-----------------------------2020-03-18 ----------------------------
+﻿-----------------------------2020-06-16 ----------------------------
+src\main\java\Testing\Tester
+添加由于登录失败引起的重跑机制（目前只针对登录失败，本质上是设置重跑次数）
+
+src\main\java\CollectionOfFunctionalMethods\BasicMethods\AssertionListener.java 添加事件TestNg完成后处理失败用例方法
+解决TestNg生成的index.html文件中个数不对的问题，这个问题只需要在Testng监听器的onFinish方法中，等所有用例运行完之 后，检查用例，按照class+method+dataprodiver的名称生成hashcode获取唯一id，如果fail的用例中存在重复的则在 fail的用例中剔除掉
+
+-----------------------------2020-03-18 ----------------------------
 添加随机数方法 src\main\java\CollectionOfFunctionalMethods\BasicMethods\GetRandom
 添加多选的操作\src\main\java\Com\execute
 -----------------------------2020-03-02 ----------------------------

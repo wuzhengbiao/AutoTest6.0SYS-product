@@ -62,7 +62,7 @@ public class HttpRequestMethod {
      * @return JSON或者字符串
      * @throws Exception
      */
-    public  Object SendGetNullBody(String url,String AppAuthentication,String Conten_type) throws Exception {
+    public  Object SendGetNullBody(String url,String AppAuthentication,String Conten_type,String Authorization) throws Exception {
         HttpStatusFlag="";
         CloseableHttpClient client = null;
         CloseableHttpResponse Getresponse = null;
@@ -74,7 +74,7 @@ public class HttpRequestMethod {
             /**
              * 创建一个get对象
              */
-            HttpGet get = new HttpGet( url );
+            HttpGet get = new HttpGet( url.trim() );
             /**
              * 设置请求的报文头部的编码
              */
@@ -82,7 +82,8 @@ public class HttpRequestMethod {
             /**
              * 设置请求的报文头部授权和格式
              */
-            get.setHeader( new BasicHeader("App-Authentication",AppAuthentication) );
+            get.setHeader( new BasicHeader("App-Authentication",AppAuthentication.trim()) );
+            get.setHeader( new BasicHeader("Authorization",Authorization.trim()) );
             get.setHeader( new BasicHeader( "accept", "application/json, text/plain, */*" ) );
             /**
              * 执行post请求
@@ -100,8 +101,7 @@ public class HttpRequestMethod {
                 HttpStatusFlag="1";//成功标记
                 String result = EntityUtils.toString( Getresponse.getEntity(), "UTF-8" );
                 System.out.print( "get请求结果响应: " + result + "\n" );
-                //  String  resultGetfirstline=StringSubByContent.SubByContentLBorRB(result,"{","}",1);
-                return result;
+                return StringSubByContent.SubByContentLBorRB(result,"{",",\"",1);
             } else {
                 System.out.print( "get请求失败！" + "\n" );
                 EventListenerMonitoring.Listenerflag=2;
@@ -273,7 +273,7 @@ public class HttpRequestMethod {
      * @return JSON或者字符串
      * @throws Exception
      */
-    public  Object SendPostString(String url, String json,String AppAuthentication,String Conten_type) throws Exception {
+    public  Object SendPostString(String url, String json,String AppAuthentication,String Conten_type,String Authorization) throws Exception {
         JSONObject jsonObject = null;
         HttpStatusFlag="";
         CloseableHttpClient client = null;
@@ -286,11 +286,11 @@ public class HttpRequestMethod {
             /**
              * 创建一个post对象
              */
-            HttpPost post = new HttpPost( url );
+            HttpPost post = new HttpPost( url.trim() );
             /**
              * 包装成一个Entity对象
              */
-            StringEntity entity = new StringEntity( json, "UTF-8" );
+            StringEntity entity = new StringEntity( json.trim(), "UTF-8" );
             post.setEntity( entity );
             System.out.print( "POST请求的entity:" + entity + "\n" );
             /**
@@ -300,7 +300,8 @@ public class HttpRequestMethod {
             /**
              * 设置请求的报文头部授权和格式
              */
-            post.setHeader( new BasicHeader("App-Authentication",AppAuthentication) );
+            post.setHeader( new BasicHeader("App-Authentication",AppAuthentication.trim()) );
+            post.setHeader( new BasicHeader("Authorization",Authorization.trim()) );
             post.setHeader( new BasicHeader( "accept", "application/json, text/plain, */*" ) );
             /**
              * 执行post请求
@@ -318,8 +319,7 @@ public class HttpRequestMethod {
                 HttpStatusFlag="1";//成功标记
                 String result = EntityUtils.toString( response.getEntity(), "UTF-8" );
                 System.out.print( "POST请求结果响应: " + result + "\n" );
-                // String  resultfirstline=StringSubByContent.SubByContentLBorRB(result,"{","}",1);
-                return result;
+                return StringSubByContent.SubByContentLBorRB(result,"{",",\"",1);
             } else {
                 System.out.print( "POST请求失败！" + "\n" );
                 HttpStatusFlag="0";//失败标记

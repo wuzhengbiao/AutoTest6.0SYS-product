@@ -7,11 +7,11 @@
         <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
         <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
-    <test name="华为云视频播放检测">
-        <parameter name="TestFilePath" value="/TestList/GSZJ.xlsx"/>
-        <parameter name="PlatformName" value="核心用例-甘肃专技华为云视频播放检测"/>
-        <parameter name="TIME" value="5"/>
-        <parameter name="TestName" value="GSZJ.xlsx"/>
+    <test name="福建会计学员学习">
+        <parameter name="TestFilePath" value="/TestList/fjkj200507.xlsx"/>
+        <parameter name="PlatformName" value="核心用例-7.0福建会计学员学习"/>
+        <parameter name="TIME" value="2"/>
+        <parameter name="TestName" value="fjkj200507.xlsx"/>
         <classes>
             <class name="Testing.Tester"/>
         </classes>

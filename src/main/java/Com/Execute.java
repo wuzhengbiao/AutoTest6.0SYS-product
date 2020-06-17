@@ -4,6 +4,7 @@ import CollectionOfFunctionalMethods.BasicMethods.EventListenerMonitoring;
 import CollectionOfFunctionalMethods.BasicMethods.GetRandom;
 import CollectionOfFunctionalMethods.BasicMethods.RobotAction;
 import CollectionOfFunctionalMethods.BasicMethods.StringSubByContent;
+import CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIReTry;
 import macaca.client.MacacaClient;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -83,7 +84,6 @@ public class Execute {
             if (Testingcase.getText().contains("文本")) {
                 GetClickText = Driver.elementByXPath(Testingcase.getModePath()).getText();
                 Aftertime=GetClickText;//当前点击元素获取到的文本值赋值给被比较的成员
-                System.out.println("当前点击元素获取到的文本值=" + GetClickText);
             }
             return 1;
         } catch (Exception e) {
@@ -148,6 +148,7 @@ public class Execute {
         if (!Aftertime.equals(beforetime)) {
             System.out.print("进入比较不相等了" + "\n");
             if (Testingcase.getText().equals("相等")) {
+                EventListenerMonitoring.Listenerflag = 2;
                 Assert.assertEquals("不相等", "相等", "前后值比较失败啦!初始值="+beforetime+" 比较值= "+Aftertime);
             }
             else{
@@ -160,6 +161,7 @@ public class Execute {
             }
             else{
                 EventListenerMonitoring.Listenerflag = 2;
+                System.out.println(" excute EventListenerMonitoring.Listenerflag= "+EventListenerMonitoring.Listenerflag);
 				Assert.assertEquals("相等", "不相等", "前后值比较失败啦!初始值="+beforetime+" 比较值= "+Aftertime);
             }
         }
@@ -183,6 +185,7 @@ public class Execute {
             return 4;
         }
     }
+    //获取元素文本值
     else if (Testingcase.getModel().equals("查验")) {
         try{
         if (Driver.waitForElementByXPath(Testingcase.getModePath())==null)
@@ -202,6 +205,7 @@ public class Execute {
          Returnbody=Driver.elementByXPath(Testingcase.getModePath()).getText();
         if(Returnbody.contains("未完成")||Returnbody.contains("正在")||Returnbody.contains("未搜索"))
         {
+            EventListenerMonitoring.Listenerflag=2;
             Assert.assertEquals("  "+ Returnbody +"  !  ","");
         }
         else

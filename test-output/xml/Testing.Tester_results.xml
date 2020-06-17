@@ -1,104 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="南平学习"
+<testsuite name="福建会计学员学习"
            tests="1"
            failures="1"
            errors="0"
            skipped="0"
-           time="6.636">
+           time="81.556">
   <properties />
-            <testcase name="tester" time="6.636" classname="Testing.Tester">
-                <failure type="org.apache.http.conn.HttpHostConnectException"
-                  message="Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect"
+            <testcase name="tester" time="81.556" classname="Testing.Tester">
+                <failure type="java.lang.AssertionError"
+                  message="序号 No.12.0, 操作说明：clickclass   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！ expected [1] but found [0]"
               >
-<![CDATA[org.apache.http.conn.HttpHostConnectException: Connect to localhost:3456 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-  org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:158)
-  org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-  org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-  org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-  org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-  org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-  org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-  org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
-  macaca.client.common.Utils.executeRequest(Utils.java:89)
-  macaca.client.common.Utils.postRequest(Utils.java:151)
-  macaca.client.common.Utils.request(Utils.java:172)
-  macaca.client.commands.Window.maximize(Window.java:49)
-  macaca.client.MacacaClient.maximize(MacacaClient.java:1339)
-  Testing.Tester.tester(Tester.java:44)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:497)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-  org.testng.TestRunner.privateRun(TestRunner.java:767)
-  org.testng.TestRunner.run(TestRunner.java:617)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-  org.testng.SuiteRunner.run(SuiteRunner.java:254)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-  org.testng.TestNG.run(TestNG.java:1057)
-  org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
-  org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-Caused by: java.net.ConnectException: Connection refused: connect
-  java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-  java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
-  java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-  java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-  java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-  java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-  java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-  java.net.Socket.connect(Socket.java:589)
-  org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-  org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
-  org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-  org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-  org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-  org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-  org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-  org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-  org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
-  macaca.client.common.Utils.executeRequest(Utils.java:89)
-  macaca.client.common.Utils.postRequest(Utils.java:151)
-  macaca.client.common.Utils.request(Utils.java:172)
-  macaca.client.commands.Window.maximize(Window.java:49)
-  macaca.client.MacacaClient.maximize(MacacaClient.java:1339)
-  Testing.Tester.tester(Tester.java:44)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:497)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-  org.testng.TestRunner.privateRun(TestRunner.java:767)
-  org.testng.TestRunner.run(TestRunner.java:617)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-  org.testng.SuiteRunner.run(SuiteRunner.java:254)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-  org.testng.TestNG.run(TestNG.java:1057)
-  org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
-  org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+<![CDATA[java.lang.AssertionError: 序号 No.12.0, 操作说明：clickclass   原因： 连续2个操作找不到元素，有可能是定位错了，或者是流程出现未知的情况！！ expected [1] but found [0]
+  Message : No.2.0 操作说明：close notice  没有找到元素！！
+操作时间: 2020-06-15 11:38:37 expected [1] but found [0] Class Method : .tester(Tester:81)
+  Testing.Tester.tester(Tester.java:81)
+  Message : No.11.0 操作说明：enterstudentclass  没有找到元素！！
+操作时间: 2020-06-15 11:39:15 expected [1] but found [0] Class Method : .tester(Tester:81)
+  Testing.Tester.tester(Tester.java:81)
+  Testing.Tester.tester(Tester.java:77)
 ]]>
       </failure>
 

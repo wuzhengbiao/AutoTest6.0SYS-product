@@ -33,19 +33,19 @@ public class InterfaceTest {
             for (TestingCase testCase : list) {
                 String Loginstruction="No." + testCase.getId() + " 协议说明: " + testCase.getDescription() + ",传输协议: " + testCase.getModel() + ", 请求方式: " + testCase.getMode()  +" 操作时间:  "+ GetCurrentSystemTime.GetCurrentTime();
                 Object Response = Execute.Interfaceexecute(testCase );//获取协议响应内容
-                String ResponseSubcontent= SpecifyLengthWrap.getStringByEnter(100,Response.toString());
+                String ResponseSubcontent= SpecifyLengthWrap.getStringByEnter(90,Response.toString());
                 System.out.print("标志 "+ EventListenerMonitoring.Listenerflag+"\n");//写入报告步骤说明
                 if(HttpRequestMethod.HttpStatusFlag.equals( "0" ))
                 {
-                    Reporter.log("<p  style=\"color:red\">"+Loginstruction+"</p>");
-                    Reporter.log( "<p  style=\"color:red\"> 请求url：" + testCase.getModePath()+"</p>" );
-                    Reporter.log( "<p  style=\"color:red\"> 参数值： " + testCase.getText() +"</p>");
+                    Reporter.log("<p  style=\"font-weight: 900;color:red;text-align: left;font-size:15px\">"+Loginstruction+"</p>");
+                    Reporter.log( "<p  style=\"color:red\"> 请求url：" + SpecifyLengthWrap.getStringByEnter(90,testCase.getModePath())+"</p>" );
+                    Reporter.log( "<p  style=\"color:red\"> 参数值： " + SpecifyLengthWrap.getStringByEnter(90,testCase.getText()) +"</p>");
                     Reporter.log( "<p  style=\"color:red\"> 返回值： " + ResponseSubcontent +"</p>");
                 }
                 else {
-                    Reporter.log("<p>"+Loginstruction+"</p>");
-                    Reporter.log( "<p>请求url：" + testCase.getModePath()+"</p>");
-                    Reporter.log( "<p>参数值： " + testCase.getText() +"</p>");
+                    Reporter.log("<p  style=\"font-weight: 900;color:black;text-align: left;font-size:15px\">"+Loginstruction+"</p>");
+                    Reporter.log( "<p>请求url：" + SpecifyLengthWrap.getStringByEnter(90,testCase.getModePath())+"</p>");
+                    Reporter.log( "<p>参数值： " + SpecifyLengthWrap.getStringByEnter(90,testCase.getText()) +"</p>");
                     Reporter.log( "<p>返回值： " + ResponseSubcontent+"</p>" );
                 }
             }

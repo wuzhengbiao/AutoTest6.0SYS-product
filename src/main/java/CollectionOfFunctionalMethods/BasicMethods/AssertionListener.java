@@ -1,9 +1,15 @@
 package CollectionOfFunctionalMethods.BasicMethods;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import CollectionOfFunctionalMethods.ServerPortAndIdRelated.QueryMacacaSeverPort;
+import CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer;
+import CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIReTry;
+import CollectionOfFunctionalMethods.UseCaseReRunCorrelation.ReTryTimes;
+import org.testng.ITestContext;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 /**
@@ -26,6 +32,7 @@ public class AssertionListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult tr) {
         this.handleAssertion(tr);
         EventListenerMonitoring.EventListenerControl( tr );
+        System.out.println("EventListenerMonitoring.Listenerflag= "+EventListenerMonitoring.Listenerflag);
         try {
             MailDelivery.TCTestCaseMailSending(1);
         } catch (Exception e) {
@@ -37,14 +44,32 @@ public class AssertionListener extends TestListenerAdapter {
     @Override
     public void onTestSkipped(ITestResult tr) {
         this.handleAssertion(tr);
+        EventListenerMonitoring.Listenerflag=3;
         EventListenerMonitoring.EventListenerControl( tr );
         System.out.println("Testng的监听器onTestSkipped！！");
     }
     @Override
     public void onTestSuccess(ITestResult tr) {
         this.handleAssertion(tr);
+        EventListenerMonitoring.Listenerflag=0;
         EventListenerMonitoring.EventListenerControl( tr );
         System.out.println("Testng的监听器onTestSuccess！！");
+    }
+    @Override
+    public void onFinish(ITestContext context) {
+        Iterator<ITestResult> listOfFailedTests = context.getFailedTests().getAllResults().iterator();
+        while (listOfFailedTests.hasNext()) {
+            ITestResult failedTest = listOfFailedTests.next();
+            ITestNGMethod method = failedTest.getMethod();
+            if (context.getFailedTests().getResults(method).size() > 1) {
+                listOfFailedTests.remove();
+            }
+            else {
+                if (context.getPassedTests().getResults(method).size() > 0) {
+                    listOfFailedTests.remove();
+                }
+            }
+        }
     }
     /**
      * 收集断言异常结果并输出

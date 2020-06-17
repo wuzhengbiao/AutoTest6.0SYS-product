@@ -12,7 +12,7 @@ public class EventListenerMonitoring {
         {
             tr.setStatus(ITestResult.FAILURE);
         }
-        else if(Listenerflag==3) //标志为3代表，监听器置为成功
+        else if(Listenerflag==3) //标志为3代表，监听器置为跳过
         {
             tr.setStatus(ITestResult.SKIP);
         }

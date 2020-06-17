@@ -37,6 +37,10 @@ public class TestingCase {
     /**
      * app授权码，只用于接口请求
      */
+    private String Authorization;
+    /**
+     * 验证码授权token，只用于接口请求
+     */
 
     public String getId() { return id; }
 
@@ -91,6 +95,14 @@ public class TestingCase {
 
     public void setAppAuthentication(String AppAuthentication) {
         this.AppAuthentication = AppAuthentication;
+    }
+
+    public String getAuthorization() {
+        return Authorization;
+    }
+
+    public void setAuthorization(String Authorization) {
+        this.Authorization = Authorization;
     }
 
 }

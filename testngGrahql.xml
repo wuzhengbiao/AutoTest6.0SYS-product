@@ -7,11 +7,11 @@
         <listener class-name="CollectionOfFunctionalMethods.BasicMethods.AssertionListener" />
         <listener class-name="CollectionOfFunctionalMethods.UseCaseReRunCorrelation.OverrideIAnnotationTransformer"/>
     </listeners>
-    <test name="Grahql接口测试">
-        <parameter name="TestFilePath" value="/TestList/Graphql.xlsx"/>
+    <test name="Grahql管理端接口查询">
+        <parameter name="TestFilePath" value="/TestList/GraphqlQueryManagement.xlsx"/>
         <parameter name="PlatformName" value="四川建设考前"/>
         <parameter name="TIME" value="2"/>
-        <parameter name="TestName" value="Graphql.xlsx"/>
+        <parameter name="TestName" value="GraphqlQueryManagement.xlsx"/>
         <classes>
             <class name="Testing.InterfaceTest"/>
         </classes>

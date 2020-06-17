@@ -69,30 +69,35 @@ public class MailDelivery {
         {
             // 设置邮件标题
             message.setSubject("《TC值班用例报告反馈结果》");
+            //如果仅仅是发送文本，使用setText()方法
+          //  message.setText(body);
+
+           //如果是发送html格式的邮件则需要使用setContent()方法，并且设置参数text/html; 这两个方法是等价的,后面执行的会覆盖前一个方法设置的内容
+
             // 设置邮件正文
-            message.setText("TC现网值班用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_chelist/surefire-reports/html/index.html");
+            message.setContent("TC现网值班用例失败,请点击后面的url查看失败结果  "+"\n\n"+"<a href='http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_chelist/surefire-reports/html/index.html'>http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_chelist/surefire-reports/html/index.html</a>","text/html;charset=UTF-8");
         }
        else if(testngType.contains( "报表" ))
         {
             // 设置邮件标题
             message.setSubject("《TC报表用例报告反馈结果》");
             // 设置邮件正文
-            message.setText("TC现网报表用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_pt/surefire-reports/html/index.html");
-        }
+            message.setContent("TC现网报表用例失败,请点击后面的url查看失败结果  "+"\n\n"+"<a href='http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_pt/surefire-reports/html/index.html'>http://macaca.fjchjlan.59iedu.com:1457/History/TheReport_pt/surefire-reports/html/index.html</a>","text/html;charset=UTF-8");
+			}
         else if(testngType.contains( "动态" ))
         {
             // 设置邮件标题
             message.setSubject("《TC动态临时用例报告反馈结果》");
             // 设置邮件正文
-            message.setText("TC现网动态临时用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReportTMP/surefire-reports/html/index.html");
+            message.setContent("TC现网动态临时用例失败,请点击后面的url查看失败结果  "+"\n\n"+"<a href='http://macaca.fjchjlan.59iedu.com:1457/History/TheReportTMP/surefire-reports/html/index.html'>http://macaca.fjchjlan.59iedu.com:1457/History/TheReportTMP/surefire-reports/html/index.html</a>","text/html;charset=UTF-8");
         }
         else
         {
             // 设置邮件标题
             message.setSubject("《TC核心用例报告反馈结果》");
             // 设置邮件正文
-            message.setText("TC现网核心用例失败,请点击后面的url查看失败结果  "+"http://macaca.fjchjlan.59iedu.com:1457/History/TheReport/surefire-reports/html/index.html");
-        }
+            message.setContent("TC现网核心用例失败,请点击后面的url查看失败结果  "+"\n\n"+"<a href='http://macaca.fjchjlan.59iedu.com:1457/History/TheReport/surefire-reports/html/index.html'>http://macaca.fjchjlan.59iedu.com:1457/History/TheReport/surefire-reports/html/index.html</a>","text/html;charset=UTF-8");
+			}
 
 message.setSentDate(new Date());
         //保存设置

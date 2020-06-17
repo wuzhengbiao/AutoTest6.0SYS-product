@@ -87,7 +87,8 @@ public class ReadExcel {
                     XSSFCell modepath = xssfRow.getCell(4);
                     XSSFCell text = xssfRow.getCell(5);
                     XSSFCell AppAuthentication = xssfRow.getCell(6);
-                    XSSFCell whereskip = xssfRow.getCell(7);
+                    XSSFCell Authorization = xssfRow.getCell(7);
+                    XSSFCell whereskip = xssfRow.getCell(8);
                     String ReturnForm = ProcessingExcelDataTypes(text, getValue(text));//调用数据处理方法
                     testingCase.setId(getValue(no));
                     testingCase.setDescription(getValue(description));
@@ -97,9 +98,11 @@ public class ReadExcel {
                     testingCase.setText(ReturnForm);
                     try{
                         testingCase.setAppAuthentication(getValue(AppAuthentication));
+                        testingCase.setAuthorization(getValue(Authorization));
                     }
                     catch (Exception e) {
                         testingCase.setAppAuthentication("空");
+                        testingCase.setAuthorization("空");
                     }
                     try{
                         testingCase.setWhetherskip(getValue(whereskip));
@@ -107,10 +110,13 @@ public class ReadExcel {
                     catch (Exception e) {
                         testingCase.setWhetherskip("否");
                     }
-
                     if(testingCase.getWhetherskip().equals("否"))//判断是否跳过执行步骤
                     {
                         list.add(testingCase);
+                        if (testingCase.getText().equals( "单例重跑" ))
+                        {
+                            list.add(testingCase);
+                        }
                     }
                    }
             }

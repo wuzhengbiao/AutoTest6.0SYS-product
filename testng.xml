@@ -16,7 +16,16 @@
         <classes>
             <class name="Testing.Tester"/>
         </classes>
-    </test>
+   </test>
+       <!-- <test name="安徽建设学员学习">-->
+        <!--<parameter name="TestFilePath" value="/TestList/7.0AHJSstudy.xlsx"/>-->
+        <!--<parameter name="PlatformName" value="核心用例-7.0安徽建设学员学习"/>-->
+       <!-- <parameter name="TIME" value="2"/>-->
+       <!-- <parameter name="TestName" value="7.0AHJSstudy.xlsx"/>-->
+       <!-- <classes>-->
+         <!--   <class name="Testing.Tester"/>-->
+        <!--</classes>-->
+   <!-- </test>-->
     <test name="甘肃专技学员学习">
         <parameter name="TestFilePath" value="/TestList/7.0GSSZstudy.xlsx"/>
         <parameter name="PlatformName" value="核心用例-7.0甘肃专技学员学习"/>
